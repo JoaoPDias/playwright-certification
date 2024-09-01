@@ -55,6 +55,8 @@ const getCapabilities = (configName: string, testName: string) => {
     capabilities["LT:Options"].platform = platform;
     capabilities.browserName = browserName;
     capabilities["LT:Options"].name = testName;
+    console.log(capabilities);
+    return capabilities;
 }
 const getErrorMessage = (obj, keys) =>
     keys.reduce(
