@@ -1,10 +1,10 @@
 # .gitpod.yml
-image:
-  file: mcr.microsoft.com/playwright:v1.36.0-jammy
+image: gitpod/workspace-full
 
 tasks:
-  - init: npm install
-  - command: npm run test
+    - name: Setup, Install
+      init: npm install
+      command: npm run test
 
 ports:
   - port: 9222
