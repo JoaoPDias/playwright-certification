@@ -2,7 +2,7 @@
 image: gitpod/workspace-full
 
 tasks:
-    - name: Setup, Install
+    - name: Install and Run Tests
       init: npm install
       command: npm run test
 
