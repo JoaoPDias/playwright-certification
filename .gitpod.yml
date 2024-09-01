@@ -1,5 +1,5 @@
 # .gitpod.yml
-image: mcr.microsoft.com/playwright:v1.46.1-jammy
+image: gitpod/workspace-full
 
 tasks:
     - name: Setup, Install
