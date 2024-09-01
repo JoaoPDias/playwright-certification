@@ -1,0 +1,15 @@
+# .gitpod.yml
+image:
+  file: mcr.microsoft.com/playwright:v1.36.0-jammy
+
+tasks:
+  - init: npm install
+  - command: npm run test
+
+ports:
+  - port: 9222
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - ms-playwright.playwright
