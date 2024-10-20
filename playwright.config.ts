@@ -16,7 +16,7 @@ export default defineConfig({
 
   projects: [
     {
-      name: "chrome:latest:Windows 11@lambdatest",
+      name: "chrome:latest:Windows 10@lambdatest",
       use: {
         viewport: { width: 1280, height: 720 },
       },
