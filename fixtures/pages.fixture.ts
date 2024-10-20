@@ -18,8 +18,8 @@ const capabilitiesArray = [{
     browserVersion: "latest",
     "LT:Options": {
         platform: "Windows 10",
-        build: "Playwright TypeScript Build",
-        name: "Playwright TypeScript Test",
+        build: "Playwright HyperExecute Build",
+        name: "Playwright HyperExecute Test",
         user: process.env.LT_USERNAME,
         accessKey: process.env.LT_ACCESS_KEY,
         network: true,
@@ -33,9 +33,9 @@ const capabilitiesArray = [{
     browserName: "pw-firefox", // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
     browserVersion: "latest",
     "LT:Options": {
-        "platform": "macOS Catalina",
-        build: "Playwright TypeScript Build",
-        name: "Playwright TypeScript Test",
+        "platform": "linux",
+        build: "Playwright HyperExecute Build",
+        name: "Playwright HyperExecute Test",
         user: process.env.LT_USERNAME,
         accessKey: process.env.LT_ACCESS_KEY,
         network: true,
