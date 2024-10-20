@@ -3,7 +3,7 @@ on:
   workflow_dispatch
         
 jobs:
-  HyperExecute-Autosplit-2-Concurrency:
+  HyperExecute-Autosplit-2-Concurrency-Windows:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:
@@ -18,9 +18,29 @@ jobs:
           curl https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute -o hyperexecute
           chmod +x hyperexecute
       
-      - name: Executing the Job
+        - name: Executing Test on Windows
         shell: bash
         run: |
-          ./hyperexecute --user ${{ secrets.LT_USERNAME }} --key ${{ secrets.LT_ACCESS_KEY }} --download-artifacts --config cloud/win/execution.yaml
-          ./hyperexecute --user ${{ secrets.LT_USERNAME }} --key ${{ secrets.LT_ACCESS_KEY }} --download-artifacts --config cloud/linux/execution.yaml
+          ./hyperexecute --user ${{ secrets.LT_USERNAME }} --key ${{ secrets.LT_ACCESS_KEY }} --config cloud/win/execution.yaml
+          echo "Test completion"
+
+  HyperExecute-Autosplit-2-Concurrency-Linux:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Download CLI and Setting Environment Variables
+        shell: bash
+        run: |
+          curl https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute -o hyperexecute
+          chmod +x hyperexecute
+      
+      - name: Executing Tests on Linux
+        shell: bash
+        run: |
+          ./hyperexecute --user ${{ secrets.LT_USERNAME }} --key ${{ secrets.LT_ACCESS_KEY }} --config cloud/linux/execution.yaml
           echo "Test completion"
