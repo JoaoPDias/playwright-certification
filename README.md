@@ -173,3 +173,7 @@ To run the tests, use the following command:
 
 ```bash
 npm run test
+```
+
+## Running Tests on Github Actions
+To run the tests on the HyperExecute using Github Actions, access this link [HyperExecute Action](https://github.com/JoaoPDias/playwright-certification/actions/workflows/hyperexecute.yml), click on **Run Workflow**, confirm the action and the workflow will be executed in minutes

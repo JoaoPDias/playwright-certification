@@ -16,6 +16,18 @@ export default defineConfig({
 
   projects: [
     {
+      name: "chrome:latest:Windows 11@lambdatest",
+      use: {
+        viewport: { width: 1280, height: 720 },
+      },
+    },
+    {
+      name: "pw-firefox:latest:linux@lambdatest",
+      use: {
+        viewport: { width: 1280, height: 720 },
+      },
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
