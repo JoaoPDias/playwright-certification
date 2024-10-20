@@ -29,7 +29,7 @@ testDiscovery:
 
 testRunnerCommand: npm run test $test -- --project="chromium"
 
-jobLabel: [playwright, linux, autosplit] 
+jobLabel: [playwright, windows, autosplit] 
 
 report: true
 partialReports:
