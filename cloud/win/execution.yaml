@@ -27,7 +27,7 @@ testDiscovery:
   mode: dynamic
   command: grep -nri 'describe' tests  | sed 's/:test.*//'
 
-testRunnerCommand: npm run test $test -- --project="chrome:latest:Windows 11@lambdatest"
+testRunnerCommand: npm run test $test -- --project="chrome:latest:Windows 10@lambdatest"
 
 jobLabel: [playwright, windows, autosplit] 
 
