@@ -1,13 +1,6 @@
 name: HyperExecute-Autosplit-2-Concurrency
 on:
-  workflow_dispatch:
-    inputs:
-      username:
-        required: true
-        description: LT Username
-      accessKey:
-        description: LT Access Key
-        required: true
+  workflow_dispatch
         
 jobs:
   HyperExecute-Autosplit-2-Concurrency:
@@ -28,6 +21,6 @@ jobs:
       - name: Executing the Job
         shell: bash
         run: |
-          ./hyperexecute --user ${{ github.event.inputs.username }} --key ${{ github.event.inputs.accessKey }} --download-artifacts --config cloud/win/execution.yaml
-          ./hyperexecute --user ${{ github.event.inputs.username }} --key ${{ github.event.inputs.accessKey }} --download-artifacts --config cloud/linux/execution.yaml
+          ./hyperexecute --user ${{ secrets.LT_USERNAME }} --key ${{ secrets.LT_ACCESS_KEY }} --download-artifacts --config cloud/win/execution.yaml
+          ./hyperexecute --user ${{ secrets.LT_USERNAME }} --key ${{ secrets.LT_ACCESS_KEY }} --download-artifacts --config cloud/linux/execution.yaml
           echo "Test completion"
