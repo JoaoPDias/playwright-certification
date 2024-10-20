@@ -27,7 +27,7 @@ testDiscovery:
   mode: dynamic
   command: grep -nri 'describe' tests  | sed 's/:test.*//'
 
-testRunnerCommand: npm run test $test -- --project="chromium"
+testRunnerCommand: npm run test $test -- --project="firefox"
 
 jobLabel: [playwright, linux, autosplit] 
 

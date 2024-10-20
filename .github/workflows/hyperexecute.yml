@@ -1,0 +1,33 @@
+name: HyperExecute-Autosplit-2-Concurrency
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        required: true
+        description: LT Username
+      accessKey:
+        description: LT Access Key
+        required: true
+        
+jobs:
+  HyperExecute-Autosplit-2-Concurrency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Download CLI and Setting Environment Variables
+        shell: bash
+        run: |
+          curl https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute -o hyperexecute
+          chmod +x hyperexecute
+      
+      - name: Executing the Job
+        shell: bash
+        run: |
+          ./hyperexecute --user ${{ github.event.inputs.username }} --key ${{ github.event.inputs.accessKey }} --download-artifacts --config cloud/win/execution.yaml
+          ./hyperexecute --user ${{ github.event.inputs.username }} --key ${{ github.event.inputs.accessKey }} --download-artifacts --config cloud/linux/execution.yaml
+          echo "Test completion"
