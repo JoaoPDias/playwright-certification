@@ -17,10 +17,10 @@ test.describe('Selenium Playground Tests', () => {
     await dragDropSliders.dragSliderToValue(93);
     await expect(dragDropSliders.sliderValue).toHaveText('95');
 
-    // Second option
-    await dragDropSliders.dragSliderbyValue('50');
-    await dragDropSliders.dragSliderbyValue('95');
-    await expect(dragDropSliders.sliderValue).toHaveText('95');
+  // Second option
+  await dragDropSliders.dragSliderByValue('50');
+  await dragDropSliders.dragSliderByValue('95');
+  await expect(dragDropSliders.sliderValue).toHaveText('95');
 
   });
 

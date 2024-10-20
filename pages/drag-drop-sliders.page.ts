@@ -20,7 +20,7 @@ export class DragDropSlidersPage implements PageObject {
         await this.dragSliderToPosition(targetX, targetY);
     }
 
-    public async dragSliderbyValue(value: string) {
+    public async dragSliderByValue(value: string) {
         await this.slider.fill(value);
     }
 

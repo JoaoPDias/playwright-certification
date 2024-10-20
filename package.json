@@ -1,13 +1,17 @@
 {
   "name": "playwright-certification",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Playwright Project for Get the Certification Playwright 101 from LambdaTest",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "postinstall": "npx playwright install --with-deps"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "playwright",
+    "certification",
+    "lambdatest"
+  ],
+  "author": "João Paulo Dias",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.46.1",

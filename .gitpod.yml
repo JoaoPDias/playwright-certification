@@ -1,0 +1,15 @@
+# .gitpod.yml
+image: gitpod/workspace-full
+
+tasks:
+    - name: Install and Run Tests
+      init: npm install
+      command: npm run test
+
+ports:
+  - port: 9323
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - ms-playwright.playwright
