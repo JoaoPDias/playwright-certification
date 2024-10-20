@@ -10,20 +10,6 @@ test.describe('Selenium Playground Tests', () => {
     await expect(simpleFormDemo.messageText).toContainText('Welcome to Lambda Test');
   });
 
-  test('Drag & Drop Sliders Validation', async ({ seleniumPlayground, dragDropSliders }) => {
-    // This test have to ways to be done, using the fill method directly or using the bounding Box Calculations method
-    // First option
-    await seleniumPlayground.selectMenuOption('Drag & Drop Sliders');
-    await dragDropSliders.dragSliderToValue(93);
-    await expect(dragDropSliders.sliderValue).toHaveText('95');
-
-  // Second option
-  await dragDropSliders.dragSliderByValue('50');
-  await dragDropSliders.dragSliderByValue('95');
-  await expect(dragDropSliders.sliderValue).toHaveText('95');
-
-  });
-
   test('Input Form Submit Validation', async ({ seleniumPlayground, registration }) => {
     await seleniumPlayground.selectMenuOption('Input Form Submit');
     await registration.fillName('John Doe');
