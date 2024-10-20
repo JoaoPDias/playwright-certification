@@ -32,6 +32,10 @@ testRunnerCommand: npm run test $test -- --project="chromium"
 jobLabel: [playwright, linux, autosplit] 
 
 report: true
+partialReports:
+  frameworkName: playwright
+  location: playwright-report
+  type: html
 mergeArtifacts: true
 uploadArtefacts:
   - name: Report
