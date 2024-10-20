@@ -32,7 +32,8 @@ testRunnerCommand: npm run test $test -- --project="firefox"
 jobLabel: [playwright, linux, autosplit] 
 
 report: true
+mergeArtifacts: true
 uploadArtefacts:
   - name: Report
     path:
-      - playwright-report/index.html
+      - playwright-report/
