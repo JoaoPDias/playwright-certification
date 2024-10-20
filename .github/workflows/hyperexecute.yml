@@ -18,7 +18,7 @@ jobs:
           curl https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute -o hyperexecute
           chmod +x hyperexecute
       
-        - name: Executing Test on Windows
+      - name: Executing Test on Windows
         shell: bash
         run: |
           ./hyperexecute --user ${{ secrets.LT_USERNAME }} --key ${{ secrets.LT_ACCESS_KEY }} --config cloud/win/execution.yaml
